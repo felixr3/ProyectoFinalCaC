@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-
+scale=1.0">
+
+    <title>Agregar pelicula</title>
+    <link rel="stylesheet" href="/Front/css/admstyle.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar-index ">
+            <img class="logo-nav" src="" alt="AGREGAR LOGO">
+        </nav>
+    </header>
+
+    <div class="logo-centrado">
+        <img src="" alt="AGREGAR LOGO">
+    </div>
+    <h1>Agregar peliculas </h1><br>
+    <!--enctype="multipart/form-data" es necesario para enviar archivos
+al back.-->
+    <form id="formulario" enctype="multipart/form-data">
+        <label for="descripcion">Nombre:</label>
+        <input type="text" id="nombre" name="descripcion" required><br>
+        <label for="descripcion">Descripción:</label>
+        <input type="text" id="descripcion" name="descripcion" required><br>
+        <label for="imagenPeli">Imagen de la pelicula:</label>
+        <input type="file" id="imagenPeli" name="imagen">
+        <br><br>
+        <label for="infoPeli">Info de la pelicula:</label>
+        <input type="text" id="infoPeli" name="proveedor">
+        <button type="submit">Agregar Producto</button>
+        <a href="adm.html">Menu principal</a>
+    </form>
+    <script src="/Front/js/agregar_pelicula.js"></script>
+</body>
+
+</html>
