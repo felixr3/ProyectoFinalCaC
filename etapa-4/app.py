@@ -1,3 +1,8 @@
+"""
+seccion back    
+"""
+import os
+import time
 from flask import Flask, request, jsonify
 # Instalar con pip install flask-cors
 from flask_cors import CORS
@@ -6,17 +11,14 @@ import mysql.connector
 # Si es necesario, pip install Werkzeug
 from werkzeug.utils import secure_filename
 # No es necesario instalar, es parte del sistema standard de Python
-import os
-import time
 
 
 
 app = Flask(__name__)
-CORS(app) 
-
+CORS(app)
 
 class Catalogo:
-#----------------------------------------------------------------
+    #----------------------------------------------------------------
 # Constructor de la clase
     def __init__(self, host, user, password, database):
         self.conn = mysql.connector.connect(
@@ -98,11 +100,12 @@ class Catalogo:
     
     
     # Cuerpo del programa
-#--------------------------------------------------------------------
-# Crear una instancia de la clase Catalogo
+    #--------------------------------------------------------------------
+    # Crear una instancia de la clase Catalogo
 catalogo = Catalogo(host='localhost', user='root', password='root', database='miapp')
 # Carpeta para guardar las imagenes
-ruta_destino = './static/imagenes/'
+ruta_destino = 'etapa-4\static\imagenes'
+
 
 @app.route("/productos", methods=["GET"])
 def listar_productos():
@@ -125,16 +128,18 @@ def agregar_producto():
     cantidad = request.form['cantidad']
     precio = request.form['precio']
     imagen = request.files['imagen']
-    proveedor = request.form['proveedor'] 
+    proveedor = request.form['proveedor']
     nombre_imagen = ""
 # Genero el nombre de la imagen
-    nombre_imagen = secure_filename(imagen.filename) 
-    nombre_base, extension = os.path.splitext(nombre_imagen) 
+    nombre_imagen = secure_filename(imagen.filename)
+    nombre_base, extension = os.path.splitext(nombre_imagen)
     nombre_imagen = f"{nombre_base}_{int(time.time())}{extension}"
     nuevo_codigo = catalogo.agregar_producto(descripcion, cantidad, precio, nombre_imagen, proveedor)
-    if nuevo_codigo: 
-        imagen.save(os.path.join(ruta_destino, nombre_imagen))
-        return jsonify({"mensaje": "Producto agregado correctamente.", 
+    if nuevo_codigo:
+        print(f"Ruta completa de la imagen: {ruta_destino}")
+        rutCom= imagen.save(os.path.join(ruta_destino, nombre_imagen))
+        print(f"Ruta completa de la imagen: {rutCom}")
+        return jsonify({"mensaje": "Producto agregado correctamente.",
                         "codigo": nuevo_codigo, "imagen": nombre_imagen}), 201
     else:
         return jsonify({"mensaje": "Error al agregar el producto."}), 500
