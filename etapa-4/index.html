@@ -3,36 +3,130 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initialscale=1.0">
-    <title>Ejemplo de uso de la API 🚀</title>
-    <link rel="stylesheet" href="./static/css/estilos.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F1</title>
+    <link rel="shortcut icon" type="image/x-icon" href="static/imagenes/f1-icono.png">
+    <link rel="stylesheet" href="static/css/style.css">
+    <!-- Iconos -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Fonts -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+    </style>
 </head>
 
 <body>
     <header>
-        <nav class="navbar-index ">
-            <img class="logo-nav" src="./static/imagenes/logos-nav.webp" alt="logo agencia de aprendizaje">
-        </nav>
-    </header>
-    <div>
-        <div class="logo-centrado">
-            <img src="./static/imagenes/logo_Codo.jpg" alt="logo">
+        <a href="#" class="logo"><i class="bx bx-home"></i>Formula 1 Argentina</a>
+
+        <ul class="navegacion">
+            <li><a href="" class="activo">Home</a></li>
+            <li><a href="circuitos.html">Circuitos</a></li>
+            <li><a href="pilotos.html">Pilotos</a></li>
+            <li><a href="firmas.html">Firmas</a></li>
+            <li><a href="tienda.html">Tienda</a></li>
+        </ul>
+
+        <div class="iconos-nav">
+            <div class="bx bx-menu" id="menu-icono"></div>
         </div>
-        <h1>Ejemplos de uso de la API</h1><br>
-        <table>
-            <tr>
-                <td class="contenedor-centrado"><a href="altas.html">Alta de productos</a></td>
-            </tr>
-            <tr>
-                <td class="contenedor-centrado "><a href="listado.html">Listado de productos</a></td>
-            </tr>
-            <tr>
-                <td class="contenedor-centrado "><a href="modificaciones.html">Modificar datos de productos</a></td>
-            </tr>
-            <tr>
-                <td class="contenedor-centrado "><a href="listadoEliminar.html">Eliminar productos</a></td>
-            </tr>
-        </table>
+    </header>
+
+    <!-- Home -->
+    <section class="home" id="home">
+        <div class="texto">
+            <h1> "Siempre hay que tratar de ser el mejor, pero nunca creerse el mejor" <br> Juan Manuel Fangio</h1>
+        </div>
+
+        <div class="h-imagen">
+            <img src="img/autof1.png" alt="Auto de F1">
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="container-caja">
+            <img src="img/f1auto.png" alt="Auto F1">
+            <h3>Ultimo Ganador</h3>
+            <p>¡Max Verstappen triunfa en Emilia-Romaña! Con un desempeño impecable, el talentoso piloto holandés se
+                alza con la victoria en el Gran Premio, consolidando su dominio en la Fórmula 1. Con esta victoria,
+                Verstappen acumula 59 triunfos en toda su carrera, demostrando su destreza y determinación en cada
+                carrera. Una hazaña inolvidable en un fin de semana lleno de emoción y adrenalina en el mundo de la
+                Fórmula 1.</p>
+        </div>
+
+        <div class="container-caja">
+            <img src="img/f1auto.png" alt="Auto F1">
+            <h3>Siguiente Carrera</h3>
+            <p>¡Monaco se prepara para el Gran Premio este 26 de mayo! Con su legendario circuito lleno de sorpresas, la
+                emoción está en el aire. ¿Podrá Max Verstappen superar la maldición una vez más y llevarse la victoria?
+            </p>
+        </div>
+
+        <div class="container-caja">
+            <img src="img/f1auto.png" alt="Auto F1">
+            <h3>Top 3 de la temporada</h3>
+            <p>Clasificación del Campeonato
+            <ul><br>
+                <li>Max Verstappen: 161 puntos,</li>
+                <br>
+                <li>Charles Leclerc: 113 puntos,</li>
+                <br>
+                <li>Sergio Perez: 107 puntos.</li>
+                <br>
+            </ul>
+            A pesar de estar al inicio de la temporada, la emoción es más intensa que nunca. Max no cuenta con su
+            monopolio de Grandes Premios, y los McLaren están más rápidos que nunca.
+            </p>
+        </div>
+    </section>
+
+    <section class="sobre" id="sobre">
+        <div class="sobre-foto">
+            <img src="img/f1bs2.jpg" alt="Auto F1">
+        </div>
+        <div class="sobre-texto">
+            <h2>Automovilismo <br> Tradicion Argentina.</h2>
+            <p>
+                Argentina y la Fórmula 1 tienen una relación histórica marcada por la pasión y la velocidad, desde los
+                legendarios días de Fangio en el Autódromo Juan y Oscar Gálvez hasta las emocionantes carreras que han
+                dejado una huella imborrable en la memoria de los aficionados. El país ha sido testigo de momentos
+                inolvidables en el circuito de Buenos Aires y ha producido talentos excepcionales como Reutemann. El
+                regreso de la Fórmula 1 a Argentina no solo sería un evento deportivo, sino un tributo a su rica
+                herencia automovilística y un impulso para la economía y el turismo. La oportunidad de revivir las
+                emocionantes carreras en suelo argentino atraería a aficionados de todo el mundo, inspiraría a las
+                generaciones futuras de pilotos y aficionados, y reavivaría la pasión por el automovilismo en el país.
+                Con su legado histórico y su apasionada base de seguidores, Argentina merece estar nuevamente en el mapa
+                de la Fórmula 1, escribiendo así un nuevo y emocionante capítulo en su apasionante historia
+                automovilística.
+            </p>
+            <a href="firmas.html" class="btn">Firma aca para la vuelta de F1</a>
+        </div>
+    </section>
+
+    <footer>
+        <a style="cursor: pointer;" id="scrollUp" onclick="scrollToTop()" class="logo"><i class="bx bx-home"></i>Formula
+            1 Argentina</a>
+
+        <ul class="navegacion">
+            <li style="cursor: pointer;"><a href="https://www.instagram.com/f1" target="_blank"><i
+                        class="bx bxl-instagram"></i></a>
+            </li>
+            <li style="cursor: pointer;"><a href="https://www.facebook.com/Formula1" target="_blank"><i
+                        class="bx bxl-facebook"></i></a>
+            </li>
+            <li style="cursor: pointer;"><a href="https://www.youtube.com/channel/UCB_qr75-ydFVKSF9Dmo6izg"
+                    target="_blank"><i class="bx bxl-youtube"></i></a>
+            </li>
+        </ul>
+
+
+    </footer>
+
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+
 </body>
 
 </html>

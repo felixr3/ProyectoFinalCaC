@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F1 Firmas</title>
+    <link rel="shortcut icon" type="image/x-icon" href="static/imagenes/f1-icono.png">
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="style-firmas.css">
+    <!-- Iconos -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Fonts -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="index.html" class="logo"><i class="bx bx-home"></i>Formula 1 Argentina</a>
+
+        <ul class="navegacion">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="circuitos.html">Circuitos</a></li>
+            <li><a href="pilotos.html">Pilotos</a></li>
+            <li><a href="" class="activo">Firmas</a></li>
+            <li><a href="tienda.html">Tienda</a></li>
+        </ul>
+
+        <div class="iconos-nav">
+            <div class="bx bx-menu" id="menu-icono"></div>
+        </div>
+    </header>
+
+    <section class="container-form">
+        <div class="form-texto">
+            <h1>FORMULA 1 EN ARGENTINA</h1>
+            <p>"La Fórmula 1 y Argentina comparten una historia legendaria. Revivir esa pasión es revivir la emoción de
+                las
+                carreras más épicas. Desde Fangio hasta hoy, el espíritu del automovilismo argentino late fuerte. ¡Es
+                tiempo
+                de que la F1 regrese a sus raíces en Argentina! Únete a la revolución del rugido de motores en los
+                circuitos
+                míticos. ¡Volvamos a hacer historia juntos!"</p>
+            <img src="/img/autof1.2.png" alt="">
+        </div>
+        <div class="formulario">
+            <form id="formulario" action="#" method="post">
+                <label for="nombre">Nombre:</label><br>
+                <input type="text" id="nombre" name="nombre" required><br><br>
+
+                <label for="apellido">Apellido:</label><br>
+                <input type="text" id="apellido" name="apellido" required><br><br>
+
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" required><br><br>
+
+                <label for="motivo">¿Por qué quieres que vuelva la F1?</label><br>
+                <textarea id="motivo" name="motivo" rows="4" cols="35" required></textarea><br><br>
+
+                <input type="checkbox" class="btn" id="mayorEdad" name="mayorEdad" required>
+                <label for="mayorEdad">Confirmo que tengo 18 años o más.</label><br><br>
+
+                <input type="submit" value="Enviar" class="btn">
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <a style="cursor: pointer;" id="scrollUp" onclick="scrollToTop()" class="logo"><i class="bx bx-home"></i>Formula
+            1 Argentina</a>
+
+        <ul class="navegacion">
+            <li style="cursor: pointer;"><a href="https://www.instagram.com/f1" target="_blank"><i
+                        class="bx bxl-instagram"></i></a>
+            </li>
+            <li style="cursor: pointer;"><a href="https://www.facebook.com/Formula1" target="_blank"><i
+                        class="bx bxl-facebook"></i></a>
+            </li>
+            <li style="cursor: pointer;"><a href="https://www.youtube.com/channel/UCB_qr75-ydFVKSF9Dmo6izg"
+                    target="_blank"><i class="bx bxl-youtube"></i></a>
+            </li>
+        </ul>
+
+
+    </footer>
+
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script src="script-form.js"></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F1 Circuitos</title>
+    <link rel="shortcut icon" type="image/x-icon" href="static/imagenes/f1-icono.png">
+
+
+
+    <link rel="stylesheet" href="static/css/style-2.css">
+    <!-- Iconos -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Fonts -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+    </style>
+
+
+</head>
+
+<body>
+    <header>
+        <a href="index.html" class="logo"><i class="bx bx-home"></i>Formula 1 Argentina</a>
+
+        <ul class="navegacion">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="circuitos.html">Circuitos</a></li>
+            <li><a href="pilotos.html">Pilotos</a></li>
+            <li><a href="firmas.html">Firmas</a></li>
+            <li><a href="" class="activo">Tienda</a></li>
+        </ul>
+
+        <div class="iconos-nav">
+            <div class="bx bx-menu" id="menu-icono"></div>
+        </div>
+    </header>
+
+    <!-- Home -->
+    <section class="" id="home">
+    </section>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+
+
+    <footer>
+        <a style="cursor: pointer;" id="scrollUp" onclick="scrollToTop()" class="logo"><i class="bx bx-home"></i>Formula
+            1 Argentina</a>
+
+        <ul class="navegacion">
+            <li style="cursor: pointer;"><a href="https://www.instagram.com/f1" target="_blank"><i
+                        class="bx bxl-instagram"></i></a>
+            </li>
+            <li style="cursor: pointer;"><a href="https://www.facebook.com/Formula1" target="_blank"><i
+                        class="bx bxl-facebook"></i></a>
+            </li>
+            <li style="cursor: pointer;"><a href="https://www.youtube.com/channel/UCB_qr75-ydFVKSF9Dmo6izg"
+                    target="_blank"><i class="bx bxl-youtube"></i></a>
+            </li>
+        </ul>
+
+
+    </footer>
+</body>
+
+</html>
+
+<script>
+    const URL = "http://127.0.0.1:5000/"
+    //const URL = "https://juanpablocodo.pythonanywhere.com/"
+
+
+    // Al subir al servidor, deberá utilizarse la siguiente ruta. USUARIO debe ser reemplazado por el nombre de usuario de Pythonanywhere
+    //const URL = "https://USUARIO.pythonanywhere.com/"
+
+
+    // Realizamos la solicitud GET al servidor para obtener todos los productos.
+    fetch(URL + 'productos')
+        .then(function (response) {
+
+            if (response.ok) {
+                //Si la respuesta es exitosa (response.ok), convierte el cuerpo de la respuesta de formato JSON a un objeto JavaScript y pasa estos datos a la siguiente promesa then.
+                return response.json();
+            } else {
+                // Si hubo un error, lanzar explícitamente una excepción para ser "catcheada" más adelante
+                throw new Error('Error al obtener los productos.');
+            }
+        })
+
+        //Esta función maneja los datos convertidos del JSON.
+        .then(function (data) {
+
+            //let tablaProductos = document.getElementById('home'); //Selecciona el elemento del DOM donde se mostrarán los productos.
+            let fila;
+            i = 0;
+            // Iteramos sobre cada producto y agregamos filas a la tabla
+            for (let producto of data) {
+
+
+
+                if (i == 0) {
+                    fila += '<div class="row"><div class="col-5"><h4>' + producto[1] + '</h4><img src="https://localhost/proyectoFinal-CodoACodo/etapa-4/static/imagenes/' + producto[4] + '" alt="Imagen del producto" style="width: 100px;"><h4>' + producto[3] + '</h4></div>';
+                    i++;
+                }
+                else {
+                    fila += '<div class="col-5"><h4>' + producto[1] + '</h4><img src="https://localhost/proyectoFinal-CodoACodo/etapa-4/static/imagenes/' + producto[4] + '" alt="Imagen del producto" style="width: 100px;"><h4>' + producto[3] + '</h4></div></div>';
+                    i--;
+                }
+
+                document.getElementById('home').innerHTML = fila;
+            }
+        })
+
+        //Captura y maneja errores, mostrando una alerta en caso de error al obtener los productos.
+        .catch(function (error) {
+            // Código para manejar errores
+            alert('Error al obtener los productos.');
+        });
+</script>
+</body>
+
+</html>

@@ -95,8 +95,8 @@ class Catalogo:
             print(f"Proveedor..: {producto['proveedor']}")
             print("-" * 40)
         else:
-            print("Producto no encontrado.")    
-    
+            print("Producto no encontrado.")
+            
     
     
     # Cuerpo del programa
