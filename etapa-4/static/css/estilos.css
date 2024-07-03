@@ -7,7 +7,7 @@
 }
 
 body {
-    background-color: #1d1a39;
+    background-color: white;
     color: white;
 }
 
@@ -23,6 +23,7 @@ body {
     align-items: center;
     margin-bottom: 5px;
     margin-top: 120px;
+    height: 250px;
 }
 
 .navbar-index {
@@ -31,7 +32,7 @@ body {
     top: 0;
     width: 100vw;
     height: 100px;
-    background-color: #390E8C;
+    background-color: black;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -62,27 +63,28 @@ h4,
 h5,
 h6 {
     text-align: center;
-    color: #ffd200;
+    color: black;
 }
 
 form {
     max-width: 400px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #390e8c;
+    background: grey;
+    color: #111;
     border: 1px solid lightslategray;
     border-radius: 5px;
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+    transition: all 0.5s ease
 }
 
 table {
     max-width: 90%;
+    color: #111;
     margin: 0 auto;
-    padding: 20px;
-    background-color: #390e8c;
-    border: 1px solid lightslategray;
+    padding: 15px;
     border-radius: 5px;
-    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+    box-shadow: 10px 10px 20px red(1, 1, 1, 1);
 }
 
 label {
@@ -102,7 +104,7 @@ textarea {
 
 input[type="submit"] {
     padding: 10px;
-    background-color: #007bff;
+    background-color: #111;
     color: #ffffff;
     border: none;
     border-radius: 5px;
@@ -110,28 +112,33 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-    background-color: #0056b3
+    background-color: #E7473C;
+    color: white;
+    box-shadow: #E7473C 0px 1px 25px;
 }
 
 button {
     padding: 8px;
     margin: 4px;
-    background-color: #007bff;
-    color: #ffffff;
+    background-color: grey;
+    color: #111;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 85%;
+    font-weight: 800;
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #E7473C;
+    color: white;
+    box-shadow: #E7473C 0px 1px 25px;
 }
 
 a {
     padding: 8px;
     margin: 4px;
-    background-color: #fdab13;
-    color: #1d1a39;
+    color: black;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -141,6 +148,7 @@ a {
 }
 
 a:hover {
-    background-color: #1d1a39;
-    color: #fdab13
+    background-color: #E7473C;
+    color: white;
+    box-shadow: #E7473C 0px 1px 25px;
 }
