@@ -102,9 +102,9 @@ class Catalogo:
     # Cuerpo del programa
     #--------------------------------------------------------------------
     # Crear una instancia de la clase Catalogo
-catalogo = Catalogo(host='localhost', user='root', password='root', database='miapp')
+catalogo = Catalogo(host='proyectocac1.mysql.pythonanywhere-services.com', user='proyectocac1', password='data_123', database='proyectocac1$appcac')
 # Carpeta para guardar las imagenes
-ruta_destino = 'etapa-4\static\imagenes'
+ruta_destino = '/home/proyectocac1/mysite/static/imagenes/'
 
 
 @app.route("/productos", methods=["GET"])

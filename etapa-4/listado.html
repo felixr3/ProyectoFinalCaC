@@ -41,13 +41,7 @@
         <a href="gestor.html">Menu principal</a>
     </div>
     <script>
-        const URL = "http://127.0.0.1:5000/"
-        //const URL = "https://juanpablocodo.pythonanywhere.com/"
-
-
-        // Al subir al servidor, deberá utilizarse la siguiente ruta. USUARIO debe ser reemplazado por el nombre de usuario de Pythonanywhere
-        //const URL = "https://USUARIO.pythonanywhere.com/"
-
+        const URL = "http://proyectocac1.pythonanywhere.com/"
 
         // Realizamos la solicitud GET al servidor para obtener todos los productos.
         fetch(URL + 'productos')
@@ -74,12 +68,7 @@
                         '<td align="right">' + producto[2] + '</td>' +
                         '<td align="right">' + producto[3] + '</td>' +
                         // Mostrar miniatura de la imagen
-                        '<td><img src=https://localhost/proyectoFinal-CodoACodo/etapa-4/static/imagenes/' + producto[4] + ' alt="Imagen del producto" style="width: 100px;"></td>' + '<td align="right">' + producto[5] + '</td>';
-                    // '<td><img src=https://www.pythonanywhere.com/user/juanpablocodo/files/home/juanpablocodo/mysite/static/imagenes/' + producto.imagen_url +' alt="Imagen del producto" style="width: 100px;"></td>' + '<td align="right">' + producto.proveedor + '</td>';
-
-                    //Al subir al servidor, deberá utilizarse la siguiente ruta. USUARIO debe ser reemplazado por el nombre de usuario de Pythonanywhere
-                    //'<td><img src=https://www.pythonanywhere.com/user/USUARIO/files/home/USUARIO/mysite/static/imagenes/' + producto.imagen_url +' alt="Imagen del producto" style="width: 100px;"></td>' + '<td align="right">' + producto.proveedor + '</td>';
-
+                        '<td><img src=https://www.pythonanywhere.com/user/proyectocac1/files/home/proyectocac1/mysite/static/imagenes/' + producto[4] + ' alt="Imagen del producto" style="width: 100px;"></td>' + '<td align="right">' + producto[5] + '</td>';
                     //Una vez que se crea la fila con el contenido del producto, se agrega a la tabla utilizando el método appendChild del elemento tablaProductos.
                     tablaProductos.appendChild(fila);
                 }
