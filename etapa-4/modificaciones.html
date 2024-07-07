@@ -13,12 +13,12 @@
 <body>
     <header>
         <nav class="navbar-index ">
-            <img class="logo-nav" src="/etapa-4/img/logopng.png" alt="logo f1">
+            <img class="logo-nav" src="img/logopng.png" alt="logo f1">
         </nav>
     </header>
 
     <div class="logo-centrado">
-        <img src="/etapa-4/img/logomanager.png" alt="logo manager">
+        <img src="img/logomanager.png" alt="logo manager">
     </div>
     <h1>Modificar Productos del Inventario</h1><br>
 
@@ -63,7 +63,7 @@
         </div>
     </div>
     <script>
-        const URL = "http://proyectocac1.pythonanywhere.com/"
+        const URL = "https://cac2024tpf.pythonanywhere.com/"
 
 
         // Variables de estado para controlar la visibilidad y los datos del formulario
@@ -94,11 +94,11 @@
                     }
                 })
                 .then(data => {
-                    descripcion = data.descripcion;
-                    cantidad = data.cantidad;
-                    precio = data.precio;
-                    proveedor = data.proveedor;
-                    imagen_url = data.imagen_url;
+                    descripcion = data[1];
+                    cantidad = data[2];
+                    precio = data[3];
+                    proveedor = data[5];
+                    imagen_url = data[4];
                     mostrarDatosProducto = true; //Activa la vista del segundo formulario
                     mostrarFormulario();
                 })
@@ -119,7 +119,7 @@
                 if (imagen_url && !imagenSeleccionada) { // Verifica si imagen_url no está vacía y no se ha seleccionado una imagen
                     
                     // imagenActual.src = './static/imagenes/' + imagen_url;                    
-                    imagenActual.src = 'https://www.pythonanywhere.com/user/proyectocac1/files/home/proyectocac1/mysite/static/imagenes/' + imagen_url;                    
+                    imagenActual.src = 'https://www.pythonanywhere.com/user/cac2024TPF/files/home/cac2024TPF/mysite/static/imagenes/' + imagen_url;                    
                     imagenActual.style.display = 'block'; // Muestra la imagen actual
                 } else {
                     imagenActual.style.display = 'none'; // Oculta la imagen si no hay URL

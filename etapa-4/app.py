@@ -102,9 +102,9 @@ class Catalogo:
     # Cuerpo del programa
     #--------------------------------------------------------------------
     # Crear una instancia de la clase Catalogo
-catalogo = Catalogo(host='proyectocac1.mysql.pythonanywhere-services.com', user='proyectocac1', password='data_123', database='proyectocac1$appnueva')
+catalogo = Catalogo(host='cac2024TPF.mysql.pythonanywhere-services.com', user='cac2024TPF', password='123456789_', database='cac2024TPF$tpfinal')
 # Carpeta para guardar las imagenes
-ruta_destino = '/home/proyectocac1/mysite/static/imagenes/'
+ruta_destino = '/home/cac2024TPF/mysite/static/imagenes/'
 
 
 @app.route("/productos", methods=["GET"])
@@ -176,9 +176,8 @@ def modificar_producto(codigo):
         producto = catalogo.consultar_producto(codigo)
         if producto:
             nombre_imagen = producto["imagen_url"]
-# Se llama al método modificar_producto pasando el codigo del producto y los nuevos datos.
-    if catalogo.modificar_producto(codigo, nueva_descripcion, 
-                                   nueva_cantidad, nuevo_precio, nombre_imagen, nuevo_proveedor):
+    
+    if catalogo.modificar_producto(codigo, nueva_descripcion, nueva_cantidad, nuevo_precio, nombre_imagen, nuevo_proveedor):
         return jsonify({"mensaje": "Producto modificado"}), 200
     else:
         return jsonify({"mensaje": "Producto no encontrado"}), 403
@@ -190,11 +189,9 @@ def eliminar_producto(codigo):
 # Primero, obtiene la información del producto para encontrar la imagen
     producto = catalogo.consultar_producto(codigo)
     if producto:
-# Eliminar la imagen asociada si existe
-        ruta_imagen = os.path.join(ruta_destino, producto['imagen_url'])
+        ruta_imagen = os.path.join(ruta_destino, producto[4])
         if os.path.exists(ruta_imagen):
             os.remove(ruta_imagen)
-# Luego, elimina el producto del catálogo
         if catalogo.eliminar_producto(codigo):
             return jsonify({"mensaje": "Producto eliminado"}), 200
         else:

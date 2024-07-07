@@ -13,12 +13,12 @@
 <body>
     <header>
         <nav class="navbar-index">
-            <img class="logo-nav" src="/etapa-4/img/logopng.png" alt="logo f1">
+            <img class="logo-nav" src="img/logopng.png" alt="logo f1">
         </nav>
     </header>
 
     <div class="logo-centrado">
-        <img src="/etapa-4/img/logomanager.png" alt="logo manager">
+        <img src="img/logomanager.png" alt="logo manager">
     </div>
     <h1>Eliminar Productos del Inventario</h1><br>
 
@@ -40,7 +40,7 @@
         <a href="gestor.html">Menu principal</a>
     </div>
     <script>
-        const URL = "http://proyectocac1.pythonanywhere.com/"
+        const URL = "https://cac2024tpf.pythonanywhere.com/"
 
 
         
@@ -58,11 +58,11 @@
                     data.forEach(producto => {
                         const row = productosTable.insertRow();
                         row.innerHTML = `
-                            <td>${producto.codigo}</td>
-                            <td>${producto.descripcion}</td>
-                            <td>${producto.cantidad}</td>
-                            <td align="right">${producto.precio}</td>
-                            <td><button onclick="eliminarProducto('${producto.codigo}')">Eliminar</button></td>
+                            <td>${producto[0]}</td>
+                            <td>${producto[1]}</td>
+                            <td>${producto[2]}</td>
+                            <td align="right">${producto[3]}</td>
+                            <td><button onclick="eliminarProducto('${producto[0]}')">Eliminar</button></td>
                         `;
                     });
                 })
@@ -75,9 +75,11 @@
 
         // Se utiliza para eliminar un producto.
         function eliminarProducto(codigo) {
+         
             // Se muestra un diálogo de confirmación. Si el usuario confirma, se realiza una solicitud DELETE al servidor a través de fetch(URL + 'productos/${codigo}', {method: 'DELETE' }).
             if (confirm('¿Estás seguro de que quieres eliminar este producto?')) {
-                fetch(URL + `productos/${codigo}`, { method: 'DELETE' })
+                fetch(URL + `productos/${codigo}`, {
+                     method: 'DELETE' })
                     .then(response => {
                         if (response.ok) {
                             // Si es exitosa (response.ok), elimina el producto y da mensaje de ok.
